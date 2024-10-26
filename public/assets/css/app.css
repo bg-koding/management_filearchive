@@ -1,0 +1,395 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body{
+    @apply
+    w-screen
+    overflow-x-hidden
+    bg-blue-50
+    font-sans
+    antialiased
+    dark:bg-black
+    dark:text-white/50
+}
+
+.navbars{
+    @apply
+    fixed
+    left-0
+    top-0
+    w-full
+    bg-blue-500
+    shadow-lg
+    z-10
+}
+.nabars-top{
+    @apply
+    flex
+    items-center
+    justify-between
+    h-14
+    text-white
+    font-medium
+    md:px-[5rem]
+}
+.nabars-top .nabars-logo{
+    @apply
+    pl-4
+    h-14
+    flex
+    items-center
+    uppercase
+}
+.nabars-top .nabars-top-menu{
+    @apply
+    flex
+    items-center
+    gap-x-2
+}
+.nabars-top .nabars-top-menu li a{
+    @apply
+    flex
+    items-center
+    gap-x-2
+}
+.nabars-top .nabars-top-menu li a img{
+    @apply
+    w-8
+    h-8
+    rounded-full
+    bg-cover
+}
+.nabars-top .nabars-top-menu li a span{
+    @apply
+    text-sm
+    font-medium
+    hidden
+    md:block
+}
+.nabars-top .nabars-top-menu li .btn-nav-toggle{
+    @apply
+    flex
+    items-center
+    justify-center
+    w-12
+    h-12
+    text-xl
+    text-slate-200
+    hover:bg-blue-600
+    hover:text-white
+    md:hidden
+}
+.nabars-bottom-menu{
+    @apply
+    p-4
+    hidden
+    md:block
+    md:px-[5rem]
+    md:py-2
+    md:bg-blue-600
+
+}
+.nabars-bottom-menu.show{
+    @apply
+    block
+}
+.nabars-bottom-menu .menu{
+    @apply
+    flex
+    flex-col
+    md:flex-row
+}
+.nabars-bottom-menu .menu li a{
+    @apply
+    flex
+    items-center
+    gap-x-2
+    text-sm
+    text-slate-200
+    uppercase
+    py-2
+    px-4
+    rounded-md
+    transition-all
+    duration-300
+    ease-in-out
+    md:rounded-sm
+}
+.nabars-bottom-menu .menu li:hover a,
+.nabars-bottom-menu .menu li:focus a,
+.nabars-bottom-menu .menu li.active a{
+    @apply
+    text-white
+    bg-blue-700
+}
+
+.section-contents{
+    @apply
+    pt-[6rem]
+    pb-8
+    px-8
+    md:pt-[10rem]
+    md:px-[6rem]
+    grid
+    grid-cols-12
+    gap-6
+}
+.sections-header{
+    @apply
+    flex
+    items-center
+    justify-between
+    gap-x-2
+}
+.sections-header .title{
+    @apply
+    text-xl
+    font-medium
+    text-slate-600
+}
+
+/* Box */
+.box{
+    @apply
+    bg-white
+    rounded-sm
+    shadow-sm
+    w-full
+}
+.box .header{
+    @apply
+    px-4
+    py-3
+    border-b-[1.2px]
+    border-b-slate-200
+    flex
+    flex-col
+    md:flex-row
+    items-center
+    justify-between
+}
+.box .header .title{
+    @apply
+    text-base
+    font-medium
+    text-slate-600
+}
+.box .body{
+    @apply
+    p-4
+    border-b-[1.2px]
+    border-b-slate-200
+}
+
+/* table */
+.table thead tr th{
+    @apply
+    text-sm
+    text-slate-600
+    font-medium
+    text-center
+}
+.table tbody tr td{
+    @apply
+    text-sm
+    text-slate-500
+    font-normal
+    text-center
+}
+.dt-paging .pagination{
+    @apply
+    flex
+    items-center
+    justify-center
+    gap-x-1
+    bg-red-500
+}
+
+/* Data table */
+
+.dt-layout-table{
+    @apply
+    w-full
+}
+.dt-layout-start{
+    @apply
+    float-start
+    mb-3
+}
+.dt-layout-end{
+    @apply
+    float-start
+    md:float-end
+    mb-3
+}
+.dt-paging.paging_simple_numbers{
+    @apply
+    bg-slate-200
+    rounded-se-sm
+}
+.dt-search,
+.dt-length{
+    @apply
+    flex
+    items-center
+    gap-x-2
+}
+.dt-search label,
+.dt-length label{
+    @apply
+    text-sm
+    text-slate-600
+}
+.dt-paging-button.previous,
+.dt-paging-button.next{
+    @apply
+   inline-block
+    px-3
+    py-2
+    text-sm
+    rounded-md
+    bg-slate-200
+    text-slate-500
+}
+.dt-paging-button.previous.disabled,
+.dt-paging-button.next.disabled{
+    @apply
+    cursor-not-allowed
+    bg-slate-100
+}
+.dt-paging-button{
+    @apply
+    rounded-full
+    inline-flex
+    items-center
+    justify-center
+    text-sm
+    text-slate-400
+    w-8
+    h-8
+    bg-slate-200
+}
+.dt-paging-button.current{
+    @apply
+    bg-blue-500
+    text-white
+}
+
+
+/* Input */
+.form-control,
+.form-select,
+textarea,
+.dt-input{
+    @apply
+    px-3
+    py-2
+    text-sm
+    text-slate-600
+    placeholder:text-slate-400
+    bg-white
+    outline-none
+    shadow-none
+    rounded-md
+    border-[1.5px]
+    border-slate-300
+    hover:border-blue-500
+    focus:border-blue-500
+    transition-all
+    duration-300
+    ease-in-out
+}
+
+
+/* input-file-upload */
+.input-file-upload {
+    @apply
+    flex
+    items-center
+    justify-center
+    rounded-md
+    border-[1.5px]
+    border-dashed
+    border-slate-300
+    bg-slate-100
+    relative
+    min-h-[150px]
+}
+.input-file-upload .previewImages {
+    @apply
+    absolute
+    top-0
+    left-0
+    w-full
+    h-full
+    bg-cover
+    z-10
+}
+.input-file-upload .box-input{
+    @apply
+    absolute
+    z-20
+    top-0
+    left-0
+    w-full
+    h-full
+}
+.input-file-upload .box-input .icons{
+    @apply
+    flex
+    flex-col
+    items-center
+    justify-center
+    w-full
+    h-full
+    z-10
+}
+.input-file-upload .box-input .icons i{
+    @apply
+    text-5xl
+    text-slate-300
+    mb-2
+}
+.input-file-upload .box-input .icons span{
+    @apply
+    text-sm
+    text-slate-400
+}
+.input-file-upload  .box-input input{
+    @apply
+    absolute
+    top-0
+    z-50
+    w-full
+    h-full
+    min-h-[150px]
+    opacity-0
+    cursor-pointer
+}
+.input-file-upload .proggres-box-bar {
+    @apply
+    absolute
+    bottom-3
+    left-3
+    right-3
+    w-[calc(100%_-_24px)]
+    z-20
+    h-[5px]
+    rounded-full
+    bg-slate-200
+}
+.input-file-upload .proggres-box-bar .proggres {
+    @apply
+    absolute
+    top-0
+    left-0
+    bottom-0
+    z-10
+    w-[20%]
+    rounded-full
+    transition-all
+    duration-300
+    ease-in-out
+    bg-blue-500
+}
